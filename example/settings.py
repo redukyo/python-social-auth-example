@@ -119,6 +119,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 )
 
 AUTHENTICATION_BACKENDS = (
+    'example.lifelongedu.LifelongeduOAuth2',
     'social.backends.amazon.AmazonOAuth2',
     'social.backends.angel.AngelOAuth2',
     'social.backends.aol.AOLOpenId',
@@ -221,6 +222,9 @@ SOCIAL_AUTH_EMAIL_VALIDATION_FUNCTION = 'example.app.mail.send_validation'
 SOCIAL_AUTH_EMAIL_VALIDATION_URL = '/email-sent/'
 # SOCIAL_AUTH_USERNAME_FORM_URL = '/signup-username'
 SOCIAL_AUTH_USERNAME_FORM_HTML = 'username_signup.html'
+
+SOCIAL_AUTH_LIFELONGEDU_KEY = 'sS9aPDb7vBSBhvMSQt88JmpNSRpYQughZRyGEXR4'
+SOCIAL_AUTH_LIFELONGEDU_SECRET = 'mpOm7gMx3765OqHuJ9i85adecvsrD34L9WAwqrew1yiCxHIfd9k9rL2RMmN40XRnulppOF6MWyMFLiHO7DE2wrr9P8flxaVJV0EvdnPmgj7tVacsXhNNm52ITRc81rjz'
 
 SOCIAL_AUTH_PIPELINE = (
     'social.pipeline.social_auth.social_details',

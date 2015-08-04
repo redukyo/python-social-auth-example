@@ -120,6 +120,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 
 AUTHENTICATION_BACKENDS = (
     'example.lifelongedu.LifelongeduOAuth2',
+    'example.naver.NaverOAuth2',
     'social.backends.amazon.AmazonOAuth2',
     'social.backends.angel.AngelOAuth2',
     'social.backends.aol.AOLOpenId',
@@ -230,6 +231,9 @@ SOCIAL_AUTH_KAKAO_KEY = 'c57ee1b8ab2a1de69e40f2428f36d1ca'
 
 SOCIAL_AUTH_GITHUB_KEY = '9a52b1b353b783be62a3'
 SOCIAL_AUTH_GITHUB_SECRET = '7e487347dc749214f5d4ddb4d17821dc6e75be1f'
+
+SOCIAL_AUTH_NAVER_KEY = 'dHzOkHHfNAgSo2M_SYQ1'
+SOCIAL_AUTH_NAVER_SECRET = 'cLrtNCpGin'
 
 SOCIAL_AUTH_PIPELINE = (
     'social.pipeline.social_auth.social_details',

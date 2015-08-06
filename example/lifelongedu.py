@@ -4,15 +4,18 @@ import json
 
 class LifelongeduOAuth2(BaseOAuth2):
     """Lifelongedu OAuth authentication backend"""
+
+    print "## called LifelongeduOAuth2"
+
     name = 'lifelongedu'
-    AUTHORIZATION_URL = 'http://121.78.115.125:8080/o/authorize'
-    ACCESS_TOKEN_URL = 'http://121.78.115.125:8080/o/token/'
+    AUTHORIZATION_URL = 'http://desktop20:8082/o/authorize'
+    ACCESS_TOKEN_URL = 'http://desktop20:8082/o/token/'
 #    AUTHORIZATION_URL = 'https://github.com/login/oauth/authorize'
 #    ACCESS_TOKEN_URL = 'https://github.com/login/oauth/access_token'
     SCOPE_SEPARATOR = ','
-#   STATE_PARAMETER = 'random_state_string'
-#   STATE_PARAMETER = False
-#   REDIRECT_STATE = False
+#    STATE_PARAMETER = 'random_state_string'
+#    STATE_PARAMETER = False
+#    REDIRECT_STATE = False
 #    STATE_PARAMETER = True
 #    REDIRECT_STATE = True
     ACCESS_TOKEN_METHOD = 'POST'
@@ -39,11 +42,11 @@ class LifelongeduOAuth2(BaseOAuth2):
 
     def user_data(self, access_token, *args, **kwargs):
         """Loads user data from service"""
-        url = 'http://121.78.115.125:8080/api/hello?' + urlencode({
+        url = 'http://desktop20:8082/api/hello?' + urlencode({
 #        url = 'http://api.github.com/user?' + urlencode({
             'access_token': access_token
         })
-#        url = 'https://121.78.115.125:8080/api/hello?' + {
+#        url = 'https://desktop20:8082/api/hello?' + {
 #            'access_token': access_token
 #        }
         try:

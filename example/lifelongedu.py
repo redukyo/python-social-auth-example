@@ -5,8 +5,8 @@ import json
 class LifelongeduOAuth2(BaseOAuth2):
     """Lifelongedu OAuth authentication backend"""
     name = 'lifelongedu'
-    AUTHORIZATION_URL = 'http://121.78.115.125:8080/o/authorize'
-    ACCESS_TOKEN_URL = 'http://121.78.115.125:8080/o/token/'
+    AUTHORIZATION_URL = 'http://myserver:8082/o/authorize'
+    ACCESS_TOKEN_URL = 'http://myserver:8082/o/token/'
 #    AUTHORIZATION_URL = 'https://github.com/login/oauth/authorize'
 #    ACCESS_TOKEN_URL = 'https://github.com/login/oauth/access_token'
     SCOPE_SEPARATOR = ','
@@ -39,11 +39,11 @@ class LifelongeduOAuth2(BaseOAuth2):
 
     def user_data(self, access_token, *args, **kwargs):
         """Loads user data from service"""
-        url = 'http://121.78.115.125:8080/api/hello?' + urlencode({
+        url = 'http://myserver:8082/api/hello?' + urlencode({
 #        url = 'http://api.github.com/user?' + urlencode({
             'access_token': access_token
         })
-#        url = 'https://121.78.115.125:8080/api/hello?' + {
+#        url = 'https://myserver:8082/api/hello?' + {
 #            'access_token': access_token
 #        }
         try:

@@ -31,6 +31,11 @@ def context(**extra):
 @render_to('home.html')
 def home(request):
     """Home view, displays login mechanism"""
+
+    print "# /python-social-auth-example/example/app/views.py home"
+    print "## request.user.is_authenticated() = " + str(request.user.is_authenticated())
+    print ""
+
     if request.user.is_authenticated():
         return redirect('done')
     return context()
